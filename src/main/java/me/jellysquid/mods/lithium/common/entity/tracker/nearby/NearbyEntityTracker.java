@@ -8,6 +8,8 @@ import net.minecraft.util.math.MathHelper;
 import java.util.HashSet;
 import java.util.Set;
 
+import me.jellysquid.mods.lithium.common.util.math.LithiumMath;
+
 /**
  * Maintains a collection of all entities within the range of this listener. This allows AI goals to quickly
  * assess nearby entities which match the provided class.
@@ -25,7 +27,7 @@ public class NearbyEntityTracker<T extends LivingEntity> implements NearbyEntity
         this.clazz = clazz;
         this.self = self;
         this.rangeSq = range * range;
-        this.rangeC = MathHelper.roundUp(MathHelper.ceil(range), 16) >> 4;
+        this.rangeC = LithiumMath.roundUp(MathHelper.ceil(range), 16) >> 4;
     }
 
     @Override
