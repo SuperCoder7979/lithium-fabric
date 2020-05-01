@@ -16,16 +16,14 @@ public abstract class MixinRedstoneWireBlock {
      * @author JellySquid
      */
     @Overwrite
-    private BlockState update(World world, BlockPos pos, BlockState state) {
+    private void update(World world, BlockPos pos, BlockState state) {
         // Wire updates are never processed on the client
         if (world.isClient) {
-            return state;
+            return;
         }
 
         RedstoneEngine engine = ((RedstoneEngineProvider) world).getRedstoneEngine();
         engine.notifyWireNeighborChanged(pos, state.get(RedstoneWireBlock.POWER));
-
-        return state;
     }
 
     /**
