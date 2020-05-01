@@ -70,7 +70,7 @@ public abstract class MixinVoronoiBiomeAccessType {
                 sZ = z3 - 1.0D;
             }
 
-            double result = calcChance(seed, bX, bY, bZ, sX, sY, sZ);
+            double result = calcSquaredDistance(seed, bX, bY, bZ, sX, sY, sZ);
 
             if (min > result) {
                 min = result;
@@ -94,7 +94,7 @@ public abstract class MixinVoronoiBiomeAccessType {
     }
 
     @Shadow
-    private static double calcChance(long seed, int x, int y, int z, double xFraction, double yFraction, double zFraction) {
+    private static double calcSquaredDistance(long seed, int x, int y, int z, double xFraction, double yFraction, double zFraction) {
         throw new UnsupportedOperationException();
     }
 }
