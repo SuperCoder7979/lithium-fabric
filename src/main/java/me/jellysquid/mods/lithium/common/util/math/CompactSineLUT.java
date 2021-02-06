@@ -45,7 +45,7 @@ public class CompactSineLUT {
             float value = lookup(i);
 
             if (expected != value) {
-                throw new IllegalArgumentException(String.format("LUT error at index %d (expected: %s, found: %s)", i, expected, value));
+                throw new IllegalArgumentException(String.format("Sine LUT error at index %d (expected: %s, found: %s)", i, expected, value));
             }
         }
     }

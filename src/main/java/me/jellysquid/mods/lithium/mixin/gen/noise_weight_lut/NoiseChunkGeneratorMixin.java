@@ -14,7 +14,7 @@ public class NoiseChunkGeneratorMixin {
      * @author Kroppeb
      */
     @Overwrite
-    private static double getNoiseWeight(int x, int y, int z) {
+    public static double getNoiseWeight(int x, int y, int z) {
         return CompactNoiseWeightLUT.getNoiseWeight(x, y, z);
     }
 }
